@@ -1,0 +1,29 @@
+.changeLocation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.changeLocation__input {
+  font-size: 19px;
+  background-color: lightskyblue;
+  border: none;
+  border-bottom: 1px solid darkblue;
+  color: white;
+}
+
+.changeLocation__input:focus {
+  outline: none;
+}
+
+.changeLocation__button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: white;
+  color: lightskyblue;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

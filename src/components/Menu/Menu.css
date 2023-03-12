@@ -1,0 +1,31 @@
+.menu {
+  position: relative;
+}
+
+.menu__closeIcon {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+}
+
+.menu > div {
+  padding-top: 100px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.menu__profile {
+  cursor: pointer;
+}
+
+.menu__button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: lightskyblue;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.app--iphone {
+  display: flex;
+  flex-direction: column;
+  background-color: lightskyblue;
+  color: #fff;
+  width: 414px;
+  height: 736px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.err {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
