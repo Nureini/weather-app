@@ -17,7 +17,6 @@ const Iphone = () => {
     country: "",
     postcode: "",
   });
-  const [errorMessage, setErrorMessage] = useState("");
   const [postcode, setPostcode] = useState("");
   const [shareLocation, setShareLocation] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -63,8 +62,6 @@ const Iphone = () => {
             longitude: position.coords.longitude,
           };
         } else {
-          // if this error happens, even after confirming to share data -> user has probably disabled location in their phone/browser settings
-          setErrorMessage("Error, please share location and try again!");
           return;
         }
       }
@@ -101,14 +98,13 @@ const Iphone = () => {
         />
         {isPostcodeInvalid && <p className="err">INVALID POSTCODE</p>}
         <ChangeLocation setPostcode={setPostcode} />
-        {errorMessage && <p>{errorMessage}</p>}
-        {!errorMessage && location && address && (
+        {
           <Weather
             address={address}
             location={location}
             shareLocation={shareLocation}
           />
-        )}
+        }
       </>
     );
   } else if (isMenuClicked) {

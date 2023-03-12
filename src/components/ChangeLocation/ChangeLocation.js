@@ -13,7 +13,7 @@ const ChangeLocation = ({ setPostcode }) => {
   };
 
   return (
-    <div className="changeLocation" onClick={handleBtn}>
+    <div className="changeLocation">
       <input
         className="changeLocation__input"
         type="text"
@@ -23,7 +23,9 @@ const ChangeLocation = ({ setPostcode }) => {
         value={newPostcode}
         onChange={handlePostcodeChange}
       />
-      <button className="changeLocation__button">Submit</button>
+      <button className="changeLocation__button" onClick={handleBtn}>
+        Submit
+      </button>
     </div>
   );
 };
