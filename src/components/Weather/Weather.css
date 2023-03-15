@@ -1,10 +1,9 @@
 .weather {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   padding: 10px 0;
-  padding-right: 30px;
-  padding-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .weather__containerOne {

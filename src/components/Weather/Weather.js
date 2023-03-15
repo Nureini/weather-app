@@ -12,6 +12,7 @@ import ThunderstormOutlinedIcon from "@mui/icons-material/ThunderstormOutlined";
 const Weather = ({ address, location, shareLocation }) => {
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
+  const [uvIndex, setUvIndex] = useState(null);
   const [username] = useState(localStorage.getItem("username") || "");
 
   useEffect(() => {
@@ -21,6 +22,11 @@ const Weather = ({ address, location, shareLocation }) => {
         const getCurrentWeatherDataResponse = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?appid=4828ffdbecf5266bb65d79765d588e86&lat=${location.latitude}&lon=${location.longitude}`
         );
+        const getUvIndex = await fetch(
+          `http://api.openweathermap.org/data/2.5/uvi?lat=${location.latitude}&lon=${location.longitude}&appid=4828ffdbecf5266bb65d79765d588e86`
+        );
+        const getUvIndexResponse = await getUvIndex.json();
+        setUvIndex(getUvIndexResponse.value);
 
         const getCurrentWeatherData =
           await getCurrentWeatherDataResponse.json();
@@ -164,6 +170,10 @@ const Weather = ({ address, location, shareLocation }) => {
             <div className="weather--info">
               <p>Wind</p>
               <p>{currentWeatherData.wind.speed}mph</p>
+            </div>
+            <div className="weather--info">
+              <p>UV Index</p>
+              <p>{uvIndex}</p>
             </div>
           </div>
         </div>
