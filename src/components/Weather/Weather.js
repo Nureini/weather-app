@@ -23,7 +23,7 @@ const Weather = ({ address, location, shareLocation }) => {
           `https://api.openweathermap.org/data/2.5/weather?appid=4828ffdbecf5266bb65d79765d588e86&lat=${location.latitude}&lon=${location.longitude}`
         );
         const getUvIndex = await fetch(
-          `http://api.openweathermap.org/data/2.5/uvi?lat=${location.latitude}&lon=${location.longitude}&appid=4828ffdbecf5266bb65d79765d588e86`
+          `https://api.openweathermap.org/data/2.5/uvi?lat=${location.latitude}&lon=${location.longitude}&appid=4828ffdbecf5266bb65d79765d588e86`
         );
         const getUvIndexResponse = await getUvIndex.json();
         setUvIndex(getUvIndexResponse.value);
