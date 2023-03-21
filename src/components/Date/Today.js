@@ -1,17 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Today.css";
 
+// this component is used to get todays data so we can display it on the weather app
 function Today() {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  // sets the useState to new Date() -> this function from javascript gives us todays date.
+  const [currentDate] = useState(new Date());
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
+  // we store all the days in arrays
   const days = [
     "Sunday",
     "Monday",
@@ -22,6 +17,7 @@ function Today() {
     "Saturday",
   ];
 
+  // we store all the months in arrays
   const months = [
     "January",
     "February",
@@ -37,9 +33,13 @@ function Today() {
     "December",
   ];
 
+  // we then use the days array we created to extract the exact day using the useState variable we created.
   const theDay = days[currentDate.getUTCDay()];
+  // we then extract the date from the useState variable we created.
   const theDate = currentDate.getUTCDate();
+  // we then use the months array we created to extract the exact month using the useState variable we created.
   const theMonth = months[currentDate.getUTCMonth()];
+  // depending on the date we set a suffix for it
   const suffix =
     theDate === 1 || theDate === 21 || theDate === 31
       ? "st"
@@ -49,6 +49,7 @@ function Today() {
       ? "rd"
       : "th";
 
+  // we return the date in the format we want it to display on our page
   return (
     <p className="currentDate">
       {theDay}, {theDate}
