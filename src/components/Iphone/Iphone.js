@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CalorieTracker from "../CalorieTracker/CalorieTracker";
 import ChangeLocation from "../ChangeLocation/ChangeLocation";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
@@ -31,6 +32,9 @@ const Iphone = () => {
 
   // if user has clicked on their profile settings
   const [isProfileClicked, setIsProfileClicked] = useState(false);
+
+  // if user has clicked on calorie tracker
+  const [isCalorieTrackerClicked, setIsCalorieTrackerClicked] = useState(false);
 
   // checks to see if user has given a valid postcode
   const [isPostcodeInvalid, setIsPostcodeInvalid] = useState(false);
@@ -124,7 +128,7 @@ const Iphone = () => {
 
   // we create this variable displayContent so depending on what the if statement is that is content we want to store inside of displayContent variable.
   let displayContent;
-  if (!isProfileClicked && !isMenuClicked) {
+  if (!isProfileClicked && !isMenuClicked && !isCalorieTrackerClicked) {
     // if neither profile or menu is clicked then the default weather page will be displayed
     displayContent = (
       <>
@@ -146,6 +150,7 @@ const Iphone = () => {
       <Menu
         setIsMenuClicked={setIsMenuClicked}
         setIsProfileClicked={setIsProfileClicked}
+        setIsCalorieTrackerClicked={setIsCalorieTrackerClicked}
       />
     );
   } else if (isProfileClicked) {
@@ -154,6 +159,14 @@ const Iphone = () => {
       <Profile
         setIsMenuClicked={setIsMenuClicked}
         setIsProfileClicked={setIsProfileClicked}
+      />
+    );
+  } else if (isCalorieTrackerClicked) {
+    // if calorie Tracker is clicked then the calorie tracker page will be displayed
+    displayContent = (
+      <CalorieTracker
+        setIsMenuClicked={setIsMenuClicked}
+        setIsCalorieTrackerClicked={setIsCalorieTrackerClicked}
       />
     );
   }

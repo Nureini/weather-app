@@ -1,40 +1,43 @@
-.profile {
+.calorieTracker {
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
 
-.profile__closeIcon {
+.calorieTracker__closeIcon {
   cursor: pointer;
   position: absolute;
   left: 0;
 }
 
-.form {
-  padding-top: 100px;
+.calorieTracker > h1 {
+  margin-top: 100px;
 }
 
-.form > div {
+.calorieTracker > p {
+  margin-bottom: 50px;
+}
+
+.calorieTracker > form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
 }
 
-.form__label--username {
-  margin-top: 20px;
-  font-size: 20px;
-  margin-bottom: 10px;
+.input--containers {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
 }
 
-#username {
+.input--containers > input {
   font-size: 24px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid darkblue;
   color: white;
-}
-
-#username:focus {
-  outline: none;
 }
 
 .button {
@@ -47,4 +50,9 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.calories {
+  font-size: 36px;
+  font-weight: bold;
 }

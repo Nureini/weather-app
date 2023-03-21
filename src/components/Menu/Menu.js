@@ -2,10 +2,20 @@ import "./Menu.css";
 import CloseIcon from "@mui/icons-material/Close";
 
 // The menu component -> contains the props setIsMenuClicked and setIsProfileClicked.
-const Menu = ({ setIsMenuClicked, setIsProfileClicked }) => {
+const Menu = ({
+  setIsMenuClicked,
+  setIsProfileClicked,
+  setIsCalorieTrackerClicked,
+}) => {
   // if profile is clicked it will have setIsProfileClicked to true and also setIsMenuClicked to false. So this way we can display the Profile section and hide the menu section.
   const handleProfileClick = () => {
     setIsProfileClicked(true);
+    setIsMenuClicked(false);
+  };
+
+  // if calories tracker is clicked it will have setIsCalorieTrackerClicked to true and also setIsMenuClicked to false. So this way we can display the Calorie Tracker section and hide the menu section.
+  const handleCaloriesClick = () => {
+    setIsCalorieTrackerClicked(true);
     setIsMenuClicked(false);
   };
 
@@ -27,6 +37,9 @@ const Menu = ({ setIsMenuClicked, setIsProfileClicked }) => {
       <div>
         <p className="menu__profile" onClick={handleProfileClick}>
           Profile
+        </p>
+        <p className="menu__calories" onClick={handleCaloriesClick}>
+          Track Calories Burned
         </p>
         <button className="menu__button" onClick={handleResetBtn}>
           Reset Account

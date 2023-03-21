@@ -14,7 +14,8 @@
   font-size: 30px;
 }
 
-.menu__profile {
+.menu__profile,
+.menu__calories {
   cursor: pointer;
 }
 
