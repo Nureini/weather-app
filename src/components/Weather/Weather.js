@@ -59,7 +59,7 @@ const Weather = ({ address, location, shareLocation }) => {
   // if no location is shared we display a message asking user to provide their location
   if (!shareLocation) {
     return (
-      <div>
+      <div className="error-info">
         <h1>We are unable to provide any information.</h1>
         <p>
           If you want us to provide any weather data, please share your location
