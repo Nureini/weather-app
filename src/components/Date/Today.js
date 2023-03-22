@@ -39,21 +39,11 @@ function Today() {
   const theDate = currentDate.getUTCDate();
   // we then use the months array we created to extract the exact month using the useState variable we created.
   const theMonth = months[currentDate.getUTCMonth()];
-  // depending on the date we set a suffix for it
-  const suffix =
-    theDate === 1 || theDate === 21 || theDate === 31
-      ? "st"
-      : theDate === 2 || theDate === 22
-      ? "nd"
-      : theDate === 3 || theDate === 23
-      ? "rd"
-      : "th";
 
   // we return the date in the format we want it to display on our page
   return (
     <p className="currentDate">
-      {theDay}, {theDate}
-      <sup>{suffix}</sup> {theMonth}
+      {theDay}, {theDate} {theMonth}
     </p>
   );
 }

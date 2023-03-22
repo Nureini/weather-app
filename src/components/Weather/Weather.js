@@ -157,8 +157,7 @@ const Weather = ({ address, location, shareLocation }) => {
 
           <p className="currentWeather">
             {/* Converts temp from kelvin to degrees celcius */}
-            {Math.round(currentWeatherData.main.temp - 273.15)}
-            °C
+            {Math.round(currentWeatherData.main.temp - 273.15)}°
           </p>
         </div>
         <div className="weather__containerTwo">

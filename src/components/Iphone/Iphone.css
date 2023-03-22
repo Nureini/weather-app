@@ -1,7 +1,7 @@
 .app--iphone {
   display: flex;
   flex-direction: column;
-  background-color: lightskyblue;
+  background: linear-gradient(#1d71f2, #19c3fb);
   color: #fff;
   width: 414px;
   height: 736px;

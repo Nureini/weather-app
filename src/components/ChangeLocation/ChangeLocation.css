@@ -1,4 +1,5 @@
 .changeLocation {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +8,8 @@
 
 .changeLocation__input {
   font-size: 19px;
-  background-color: lightskyblue;
   border: none;
-  border-bottom: 1px solid darkblue;
-  color: white;
+  color: black;
 }
 
 .changeLocation__input:focus {
@@ -21,7 +20,7 @@
   margin-top: 10px;
   padding: 5px 10px;
   background-color: white;
-  color: lightskyblue;
+  color: #1d71f2;
   font-weight: bold;
   border: none;
   border-radius: 5px;
